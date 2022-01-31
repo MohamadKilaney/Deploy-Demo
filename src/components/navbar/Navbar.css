@@ -1,0 +1,23 @@
+.Navbar{
+    height: 50px;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.navBar{
+    display: flex;
+    flex-direction: row;    
+    list-style-type: none;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 14px;
+    font-size: 1.3rem;
+    color: #19282F;
+    font-weight: 800;
+}
+
+.navBar li {
+    margin: 6px;
+    display: flex;
+    align-items: center;
+}
