@@ -1,3 +1,6 @@
+import React, { useState, useEffect, useCallback } from 'react'
+
+//import css files
 import './Header.css';
 
 //import components
@@ -12,11 +15,32 @@ import SearchIcon from '@mui/icons-material/Search';
 import DehazeIcon from '@mui/icons-material/Dehaze';
 
 function Header() {
+    const [screenWidth, setScreenWidth] = useState(window.innerWidth);//screen width
+    const [toggleMenu, setToggleMenu] = useState(false);//navbar status
+
+    const callback = useCallback((toggleMenu) => {
+        setToggleMenu(toggleMenu);
+    }, []);
+
+
+    useEffect(() => {
+        const changeWidth = () => {
+            setScreenWidth(window.innerWidth);
+        }
+        window.addEventListener('resize', changeWidth);
+    }, []);
+
+    function toggleMenuFunc(event) {
+        event.preventDefault();
+        setToggleMenu(!toggleMenu);
+    }
+
     return (
         <div className='header__comp'>
             <div className="Header">
                 <div className='resp__header'>
-                    <DehazeIcon></DehazeIcon>
+                    {!toggleMenu ? <DehazeIcon onClick={toggleMenuFunc}></DehazeIcon> : ''}
+
                 </div>
                 <div className='header__icon'>
                     <img className='logo' src={logo} alt='this is logo' />
@@ -38,7 +62,8 @@ function Header() {
                     </ul>
                 </div>
             </div>
-            {/* <Navbar></Navbar> */}
+            {(toggleMenu === true || screenWidth > 550) ? <Navbar status={callback}></Navbar> : ''}
+
         </div>
     );
 }

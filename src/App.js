@@ -13,6 +13,8 @@ import paraPhoto from './images/paraPhoto1.png'
 //import icon from Material icons
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
+
+
 function App() {
   return (
     <div className="App">
