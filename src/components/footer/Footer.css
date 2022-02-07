@@ -1,0 +1,45 @@
+.Footer{
+    height: 50vh;
+    width: 100%;
+    margin-top: 10px;
+    background-color: darkred;
+    display: flex;
+    flex-direction: row;
+}
+
+.section__1{
+    width: 33vw;
+    height: 100%;
+    background-color: darksalmon;
+}
+
+.section__2{
+    width: 33vw;
+    height: 100%;
+    background-color: darkslateblue;
+}
+
+.section__3{
+    width: 33vw;
+    height: 100%;
+    background-color: darkturquoise;
+}
+
+@media only screen and (max-width: 550px) {
+    .Footer{
+        flex-direction: column;
+        height: 100vh;
+    }
+
+    .section__1{
+        width: 100vw;
+    }
+    
+    .section__2{
+        width: 100vw;
+    }
+    
+    .section__3{
+        width: 100vw;
+    }
+}

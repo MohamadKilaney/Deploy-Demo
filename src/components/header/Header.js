@@ -63,7 +63,6 @@ function Header() {
                 </div>
             </div>
             {(toggleMenu === true || screenWidth > 550) ? <Navbar status={callback}></Navbar> : ''}
-
         </div>
     );
 }
